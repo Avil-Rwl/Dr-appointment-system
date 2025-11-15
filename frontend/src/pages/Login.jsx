@@ -12,13 +12,12 @@ const Login = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
   const onSubmitHandler = async (e) => {
     e.preventDefault()
 
     try {
 
-      if (state === 'Sign up') {
+      if (state === 'Sign Up') {
         const { data } = await axios.post(backendUrl + '/api/user/register', { name, password, email })
         if (data.success) {
           localStorage.setItem('token', data.token)
