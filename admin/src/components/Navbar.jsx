@@ -47,7 +47,7 @@ const Navbar = () => {
                 ) : (
                   <>
                     <UserCheck className="w-3.5 h-3.5 text-accent" />
-                    <span>Doctor</span>
+                    <span>Doctor 🩺🩺</span>
                   </>
                 )}
               </div>
