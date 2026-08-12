@@ -1,23 +1,115 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
 
-*{
-  font-family: Outfit;
-}
+@layer base {
+  :root {
 
-.active hr{
-  @apply block
-}
+    /* =========================
+       GREEN MEDICAL COLOR PALETTE
+       ========================= */
 
-::-webkit-scrollbar{
-  @apply hidden
-}
+    /* Backgrounds & Surfaces */
+    --surface: #A8D5BA;
+    --background: #ffffff;
+    --surface-glass: rgba(255, 255, 255, 0.75);
 
-@media (max-width: 740px) {
-  .active p{
-    @apply text-white bg-primary
+    /* Text Colors */
+    --text-primary: #1B5E3A;
+    --text-secondary: #2E7D5C;
+    --text-muted: #4B9B6E;
+
+    /* Primary Brand Colors */
+    --primary: #2E7D5C;
+    --primary-hover: #1B5E3A;
+    --primary-light: #DDF3E4;
+
+    /* Secondary Colors */
+    --secondary: #4B9B6E;
+    --secondary-hover: #2E7D5C;
+
+    /* Accent & Alerts */
+    --accent: #6BBF8A;
+    --destructive: #dc2626;
+
+    /* Borders */
+    --border-color: rgba(75, 155, 110, 0.25);
+
+    /* Extra UI Colors */
+    --card-bg: #ffffff;
+    --navbar-bg: rgba(255, 255, 255, 0.85);
+    --sidebar-bg: #6BBF8A;
+    --input-bg: #ffffff;
+    --hover-bg: rgba(107, 191, 138, 0.12);
   }
+
+  /* =========================
+     DARK MODE
+     ========================= */
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+
+      --background: #10281D;
+      --surface: #163524;
+      --surface-glass: rgba(22, 53, 36, 0.75);
+
+      --text-primary: #EAF7EF;
+      --text-secondary: #B7DEC6;
+      --text-muted: #8BC7A4;
+
+      --primary: #6BBF8A;
+      --primary-hover: #4B9B6E;
+      --primary-light: rgba(107, 191, 138, 0.12);
+
+      --secondary: #4B9B6E;
+      --secondary-hover: #2E7D5C;
+
+      --accent: #A8D5BA;
+
+      --border-color: rgba(168, 213, 186, 0.18);
+
+      --card-bg: #163524;
+      --navbar-bg: rgba(22, 53, 36, 0.85);
+      --sidebar-bg: #1B5E3A;
+      --input-bg: #21442F;
+      --hover-bg: rgba(107, 191, 138, 0.08);
+    }
+  }
+
+  /* =========================
+     GLOBAL BODY
+     ========================= */
+
+  body {
+    background-color: var(--background);
+    color: var(--text-secondary);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+  }
+}
+
+/* =========================
+   PREMIUM DROPDOWN ANIMATION
+   ========================= */
+
+@keyframes dropdownSlide {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-dropdownSlide {
+  animation: dropdownSlide 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

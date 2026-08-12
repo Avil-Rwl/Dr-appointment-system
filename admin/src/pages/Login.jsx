@@ -18,6 +18,7 @@ const Login = () => {
 
       if (state === 'Admin') {
         const { data } = await axios.post(backendUrl + '/api/admin/login', { email, password })
+        console.log("Backend URL:", backendUrl);
         if (data.success) {
           localStorage.setItem('aToken', data.token)
           setAToken(data.token)
@@ -25,12 +26,23 @@ const Login = () => {
           toast.error(data.message)
         }
       } else {
+        const { data } = await axios.post(backendUrl + '/api/doctor/login', { email, password })
+        console.log("Backend URL:", backendUrl);
+        if (data.success) {
+          localStorage.setItem('dToken', data.token)
+          // window.location.href = '/doctor'
+        } else {
+          toast.error(data.message)
+        }
 
       }
 
-    } catch (error) {
-
-    }
+    }  catch (error) {
+     console.log("LOGIN ERROR:", error);
+    console.log("RESPONSE:", error.response);
+   toast.error(error.response?.data?.message || error.message);
+}
+    
   }
 
   return (

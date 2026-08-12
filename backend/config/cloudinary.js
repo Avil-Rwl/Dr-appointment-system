@@ -13,6 +13,7 @@ const connectCloudinary = async () => {
   const apiKey = process.env.CLOUDINARY_API_KEY
   const apiSecret = process.env.CLOUDINARY_SECRET_KEY || process.env.CLOUDINARY_API_SECRET || process.env.CLOUDINARY_SECRET
 
+
   if (!cloudName || !apiKey || !apiSecret) {
     console.warn('Cloudinary env missing:', {
       CLOUDINARY_NAME: !!cloudName,

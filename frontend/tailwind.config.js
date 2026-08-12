@@ -6,11 +6,26 @@ export default {
   ],
   theme: {
     extend: {
-      colors:{
-        'primary': "#5f6FFF"
-      },
-      gridTemplateColumns: {
-        'auto': "repeat(auto-fill, minmax(200px, 1fr))"
+      colors: {
+        background: "var(--background)",
+        surface: "var(--surface)",
+        
+        textPrimary: "var(--text-primary)",
+        textSecondary: "var(--text-secondary)",
+        textMuted: "var(--text-muted)",
+        
+        primary: {
+          DEFAULT: "var(--primary)",
+          hover: "var(--primary-hover)",
+          light: "var(--primary-light)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          hover: "var(--secondary-hover)",
+        },
+        accent: "var(--accent)",
+        destructive: "var(--destructive)",
+        medicalBorder: "var(--border-color)",
       },
     },
   },
