@@ -34,7 +34,7 @@ const Banner = () => {
             Book Your Next <br />
             <span className="text-primary font-black relative">Appointment</span> 
             <span className="block text-xl sm:text-2xl font-medium text-textSecondary mt-4 tracking-normal">
-              With 100+ Trusted Healthcare Providers
+              With 100+ Trusted Healthcare Providers Doctors and Specialists in Your Area
             </span>
           </h2>
 
