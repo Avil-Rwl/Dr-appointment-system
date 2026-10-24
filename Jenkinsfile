@@ -3,7 +3,7 @@ agent {
 label 'mern-agent'
 }
 
-```
+
 stages {
     stage('Checkout Verification') {
         steps {
@@ -23,6 +23,7 @@ post {
         echo 'Pipeline failed. Check the console output.'
     }
 }
-```
+
 
 }
+
