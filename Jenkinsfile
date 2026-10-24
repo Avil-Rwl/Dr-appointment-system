@@ -9,6 +9,7 @@ stages {
         steps {
             echo 'GitHub webhook is working!'
             echo'Congress u have done it!'
+            echo'You are great'
             sh 'hostname'
             sh 'whoami'
             sh 'git --version'
