@@ -7,7 +7,7 @@ label 'mern-agent'
 stages {
     stage('Checkout Verification') {
         steps {
-            echo 'Jenkins Agent is running the pipeline!'
+            echo 'GitHub webhook is working!'
             sh 'hostname'
             sh 'whoami'
             sh 'git --version'
