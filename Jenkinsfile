@@ -15,6 +15,13 @@ stages {
             sh 'git --version'
         }
     }
+     stage('Docker Verification') {
+     steps {
+            sh 'docker --version'
+            sh 'docker ps'
+    }
+}
+    
 }
 
 post {
