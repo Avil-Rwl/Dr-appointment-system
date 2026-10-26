@@ -75,6 +75,7 @@ pipeline {
     post {
         success {
             echo 'Docker images built and pushed successfully!'
+            echo 'Docker setup is done'
         }
 
         failure {
